@@ -1,0 +1,15 @@
+{
+  "name": "Woking Panda Frying Dragon Attendance",
+  "short_name": "WPFD Attendance",
+  "description": "Staff attendance and salary, Dahisar Kandarpada",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EBEFED",
+  "theme_color": "#12403C",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Woking Panda Frying Dragon: Staff Attendance & Salary</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#12403C">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EBEFED;--card:#fff;--ink:#14201F;--mute:#586967;--line:#D3DBD9;--red:#C8312B;--teal:#12403C;--ok:#1E7A4C;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1918;--card:#172524;--ink:#E7EFED;--mute:#93A6A3;--line:#2A3B39;--red:#E5554E;--teal:#2F7F77;--ok:#5CCB92;--on:#fff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E1918;--card:#172524;--ink:#E7EFED;--mute:#93A6A3;--line:#2A3B39;--red:#E5554E;--teal:#2F7F77;--ok:#5CCB92;--on:#fff;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.45 'Public Sans',system-ui,-apple-system,Segoe UI,sans-serif}
+h1,h2,h3,.clk{font-family:'Bricolage Grotesque','Public Sans',system-ui,sans-serif;margin:0}
+main{max-width:540px;margin:0 auto;padding:16px 16px 104px}
+section[hidden]{display:none}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:0 0 14px}
+h2{font-size:22px;margin:4px 0 12px}h3{font-size:17px;margin:18px 0 8px}
+.mute{color:var(--mute);font-size:14px}
+.clk{font-size:60px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.cam{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;background:#0b1413;outline:5px solid var(--ring,var(--red));outline-offset:-1px;margin:14px 0}
+.cam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.cam .msg{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;text-align:center;color:#dfe9e7;padding:20px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:9px 14px;font:600 15px 'Public Sans',sans-serif;min-height:44px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--on)}
+.chip i{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--ok);margin-right:7px}
+.btn{border:0;border-radius:14px;padding:13px 18px;font:600 16px 'Public Sans',sans-serif;min-height:48px;cursor:pointer;background:var(--teal);color:var(--on)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{min-height:38px;padding:7px 12px;font-size:14px}
+.btn.danger{background:transparent;color:var(--red);border:1.5px solid var(--red)}
+.punch{width:100%;font-size:20px;min-height:64px;border-radius:18px;margin-top:12px;background:var(--red)}
+.punch.out{background:var(--teal)}
+.punch:disabled{opacity:.45}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+label{display:block;font-size:14px;color:var(--mute);margin:10px 0 4px}
+input,select,textarea{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;font:400 16px 'Public Sans',sans-serif;background:var(--bg);color:var(--ink)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.li{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.li:first-child{border-top:0}.li .g{flex:1;min-width:0}
+.li img{width:56px;height:42px;object-fit:cover;border-radius:8px;background:var(--line)}
+.tag{font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ok);color:#fff}.tag.out{background:var(--teal)}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.stat b{display:block;font:700 20px 'Bricolage Grotesque',sans-serif;font-variant-numeric:tabular-nums}
+.net{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid var(--ink);padding-top:10px;margin-top:10px}
+.net b{font:700 26px 'Bricolage Grotesque',sans-serif;font-variant-numeric:tabular-nums}
+.tot{background:var(--teal);color:var(--on);border-color:var(--teal)}.tot .mute{color:#cfe3e0}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px));gap:6px;z-index:5}
+nav button{flex:1;border:0;background:transparent;color:var(--mute);font:600 14px 'Public Sans',sans-serif;min-height:48px;border-radius:12px;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--bg);color:var(--ink)}
+#toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;z-index:9;max-width:90%;text-align:center}
+#toast[hidden]{display:none}
+.scroll{overflow-x:auto}
+.cam .msg[hidden]{display:none}
+.brand{margin:0 0 16px;padding-bottom:12px;border-bottom:2px solid var(--red)}
+.brand b{display:block;font:700 22px/1.15 'Bricolage Grotesque','Public Sans',system-ui,sans-serif}
+.brand span{font-size:13px;color:var(--mute);letter-spacing:.02em}
+.acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:170px}
+textarea{min-height:64px;font-size:16px}
+.dt{margin-top:8px;font-size:14px;white-space:pre-line;word-break:break-word}
+@media (prefers-reduced-motion:no-preference){.punch,.chip{transition:background .15s}}
+</style>
+</head>
+<body>
+<main>
+<header class="brand"><b>Woking Panda Frying Dragon</b><span>Premiere outlet, Dahisar Kandarpada</span></header>
+<section id="t-punch">
+  <div class="mute" id="dt"></div>
+  <div class="clk" id="clk">--:--</div>
+  <div class="cam" id="cam"><video id="v" autoplay playsinline muted></video><div class="msg" id="cm" hidden></div></div>
+  <div class="mute" style="margin-bottom:8px">Who is punching?</div>
+  <div class="chips" id="chips"></div>
+  <div id="st" class="mute" style="margin-top:10px"></div>
+  <button class="btn punch" id="go" disabled>Punch in</button>
+  <input type="file" id="f" accept="image/*" capture="user" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none" tabindex="-1" aria-hidden="true">
+  <h3>Today’s punches</h3>
+  <div class="card" id="today"></div>
+</section>
+
+<section id="t-lock" hidden></section>
+<section id="t-staff" hidden>
+  <h2>Staff</h2>
+  <div class="card" id="slist"></div>
+  <div class="card">
+    <h3 style="margin-top:0" id="fh">Add staff member</h3>
+    <label for="ne">Employee ID (automatic)</label><input id="ne" readonly>
+    <label for="nn">Name</label><input id="nn" autocomplete="off">
+    <label for="nr">Role</label><input id="nr" placeholder="Cook, waiter, cashier…" autocomplete="off">
+    <div class="row">
+      <div><label for="np">Paid</label><select id="np"><option value="monthly">Monthly</option><option value="daily">Daily</option><option value="hourly">Hourly</option></select></div>
+      <div><label for="na" id="nal">Monthly salary (₹)</label><input id="na" type="number" inputmode="decimal" min="0"></div>
+    </div>
+    <h3>Employment</h3>
+    <div class="row"><div><label for="nh">Hiring date</label><input id="nh" type="date"></div><div><label for="nd">Date of birth</label><input id="nd" type="date"></div></div>
+    <label for="nb">Blood group</label><select id="nb"><option value="">Not set</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+    <h3>Government ID</h3>
+    <div class="row"><div><label for="gt">ID type</label><select id="gt"><option value="">Not set</option><option>Aadhaar</option><option>PAN</option><option>Voter ID</option><option>Driving licence</option><option>Passport</option><option>Other</option></select></div><div><label for="gn">ID number</label><input id="gn" autocomplete="off"></div></div>
+    <h3>Bank account</h3>
+    <label for="bh">Account holder name</label><input id="bh" autocomplete="off">
+    <label for="bn">Bank name</label><input id="bn" autocomplete="off">
+    <div class="row"><div><label for="ba">Account number</label><input id="ba" inputmode="numeric" autocomplete="off"></div><div><label for="bi">IFSC code</label><input id="bi" autocapitalize="characters" autocomplete="off"></div></div>
+    <h3>Address</h3>
+    <label for="ac">Current address</label><textarea id="ac"></textarea>
+    <label for="ap">Permanent address</label><textarea id="ap"></textarea>
+    <button class="btn ghost sm" style="margin-top:8px" data-a="sameadr">Same as current address</button>
+    <h3>Emergency contact</h3>
+    <div class="row"><div><label for="en">Contact name</label><input id="en" autocomplete="off"></div><div><label for="ep">Phone number</label><input id="ep" type="tel" inputmode="tel" autocomplete="off"></div></div>
+    <button class="btn" style="width:100%;margin-top:14px" data-a="add" id="fb">Add staff member</button><button class="btn ghost" style="width:100%;margin-top:8px" data-a="cancel" id="fc" hidden>Cancel editing</button>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Pay rules</h3>
+    <div class="row3">
+      <div><label for="s1">Shift hours</label><input id="s1" type="number" inputmode="decimal" min="1" data-s="std"></div>
+      <div><label for="s2">Overtime ×</label><input id="s2" type="number" inputmode="decimal" step=".25" min="1" data-s="ot"></div>
+      <div><label for="s3">Days / month</label><input id="s3" type="number" inputmode="numeric" min="1" max="31" data-s="days"></div></div><div class="row" style="margin-top:4px"><div><label for="s4">Salary period starts on day</label><input id="s4" type="number" inputmode="numeric" min="1" max="28" data-s="start"></div><div><label for="s5">Pay day (next month)</label><input id="s5" type="number" inputmode="numeric" min="1" max="28" data-s="pay"></div>
+    </div>
+    <p class="mute">A day counts as full at 75% of shift hours and half at 40%. Hours beyond the shift are overtime. Night shifts count toward the day they started.</p>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">Owner PIN and backup</h3>
+    <p class="mute">Records are stored only in this phone’s browser. Copy a backup now and then. Backups include staff details such as ID and bank numbers, pay rules, advances and punch times, but not photos. Keep the backup text private.</p>
+    <div class="row"><button class="btn ghost sm" data-a="chpin">Change PIN</button><button class="btn ghost sm" data-a="lock">Lock now</button></div>
+    <label for="bk">Backup text</label><textarea id="bk" spellcheck="false"></textarea>
+    <div class="row" style="margin-top:10px"><button class="btn ghost sm" data-a="bkcopy">Create and copy backup</button><button class="btn ghost sm" data-a="bkrest">Restore from text</button></div>
+  </div>
+</section>
+
+<section id="t-rep" hidden>
+  <h2>Salary report</h2>
+  <label for="mo" style="margin-top:0">Salary month</label><input id="mo" type="month">
+  <div id="rep" style="margin-top:14px"></div>
+</section>
+</main>
+<div id="toast" hidden></div>
+<nav role="tablist">
+  <button role="tab" data-tab="punch" aria-selected="true">Punch</button>
+  <button role="tab" data-tab="staff" aria-selected="false">Staff</button>
+  <button role="tab" data-tab="rep" aria-selected="false">Salary</button>
+</nav>
+
+<script>
+const K='punchclock-v1',$=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const inr=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(Math.round(n||0));
+const fT=t=>new Date(t).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit'});
+const fD=t=>new Date(t).toLocaleDateString('en-IN',{day:'numeric',month:'short'});
+const ym=t=>{const d=new Date(t);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};
+let S={staff:[],punches:[],set:{std:8,ot:1.5,days:26},adj:{},pin:null},store=true,sel=null,tab='punch',stream=null,unlocked=false,editId=null,fails=0,until=0,mode='',openId=null;
+try{const r=localStorage.getItem(K);if(r)S=Object.assign(S,JSON.parse(r))}catch(e){store=false}
+S.set=Object.assign({std:8,ot:1.5,days:26,start:1,pay:10},S.set);S.adv=S.adv||[];fixEids();
+function save(){if(!store)return;for(let i=0;i<500;i++){try{localStorage.setItem(K,JSON.stringify(S));return}catch(e){const p=S.punches.find(x=>x.ph);if(!p)return;delete p.ph}}}
+function toast(m){const t=$('#toast');t.textContent=m;t.hidden=false;clearTimeout(toast.k);toast.k=setTimeout(()=>t.hidden=true,2600)}
+
+/* ---- calculations ---- */
+function sessions(sid){const out=[];let open=null;for(const p of S.punches){if(p.sid!==sid)continue;if(p.type==='in'){if(!open)open=p}else if(open){out.push({a:open.t,b:p.t});open=null}}return{out,open}}
+function calc(st,m){
+  const days={};const P=period(m);for(const s of sessions(st.id).out){if(s.a<P.a||s.a>=P.b)continue;const k=new Date(s.a).toDateString();days[k]=(days[k]||0)+(s.b-s.a)/36e5}
+  const{std,ot,days:wd}=S.set;let full=0,hrs=0,otH=0;
+  for(const h of Object.values(days)){hrs+=h;full+=h>=std*.75?1:h>=std*.4?.5:0;otH+=Math.max(0,h-std)}
+  const hr=st.type==='hourly'?st.rate:st.type==='daily'?st.rate/std:st.rate/wd/std;
+  const base=st.type==='hourly'?hrs*st.rate:st.type==='daily'?full*st.rate:full*st.rate/wd;
+  const otPay=st.noOt?0:(st.type==='hourly'?otH*hr*(ot-1):otH*hr*ot);
+  const other=+S.adj[m+'|'+st.id]||0,adv=advOf(st.id,m),ded=other+adv,gross=base+otPay;
+  return{full,hrs,otH,base,otPay,gross,other,adv,ded,net:gross-ded};
+}
+
+function natMsg(err){return`<b>Live preview unavailable${err?' ('+esc(err)+')':''}</b><span>Pick your name, then open the phone camera to take the photo.</span><button class="btn" id="nat" style="background:var(--red)">Open phone camera</button><button class="btn ghost sm" id="retry" style="color:#fff;border-color:#9fc4bf">Try live preview again</button>`}
+/* ---- camera ---- */
+function camMsg(html){const c=$('#cm');c.innerHTML=html||'';c.hidden=!html}
+async function startCam(){
+  if(stream)return;
+  if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){camMsg(natMsg());return}
+  try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'},audio:false});$('#v').srcObject=stream;camMsg('')}
+  catch(e){stream=null;camMsg(natMsg(e&&e.name))}
+}
+function stopCam(){if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;$('#v').srcObject=null}}
+function stamp(src,w,h,label){
+  const W=160,H=Math.round(W*h/w),c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+  x.drawImage(src,0,0,W,H);x.fillStyle='rgba(0,0,0,.55)';x.fillRect(0,H-16,W,16);x.fillStyle='#fff';x.font='11px sans-serif';x.fillText(label,5,H-4);
+  return c.toDataURL('image/jpeg',.55);
+}
+const label=()=>{const d=new Date();return fD(d)+' '+fT(d)};
+
+/* ---- punch ---- */
+function status(){const st=S.staff.find(s=>s.id===sel);if(!st)return null;const o=sessions(sel).open;return{st,open:o}}
+function renderPunch(){
+  const ch=$('#chips');
+  ch.innerHTML=S.staff.length?S.staff.map(s=>`<button class="chip" aria-pressed="${s.id===sel}" data-sel="${s.id}">${sessions(s.id).open?'<i></i>':''}${esc(s.name)}</button>`).join(''):'<span class="mute">No staff yet. Add your team in the Staff tab.</span>';
+  const s=status(),b=$('#go');
+  if(!s){$('#st').textContent=S.staff.length?'Pick a name to continue.':'';b.disabled=true;b.textContent='Punch in';b.className='btn punch';$('#cam').style.setProperty('--ring','var(--red)')}
+  else{b.disabled=false;b.textContent=s.open?'Punch out':'Punch in';b.className='btn punch'+(s.open?' out':'');$('#cam').style.setProperty('--ring',s.open?'var(--teal)':'var(--red)');$('#st').textContent=s.open?`${s.st.name} has been in since ${fT(s.open.t)}.`:`${s.st.name} is currently out.`}
+  const td=S.punches.filter(p=>new Date(p.t).toDateString()===new Date().toDateString()).reverse();
+  $('#today').innerHTML=td.length?td.map(p=>row(p,false)).join(''):'<span class="mute">Nothing yet today.</span>';
+}
+function row(p,del){const n=(S.staff.find(s=>s.id===p.sid)||{name:'Removed'}).name;
+  return`<div class="li">${p.ph?`<img src="${p.ph}" alt="Photo of ${esc(n)}">`:'<img alt="">'}<div class="g"><b>${esc(n)}</b><div class="mute">${fD(p.t)}, ${fT(p.t)}</div></div><span class="tag ${p.type}">${p.type==='in'?'In':'Out'}</span>${del?`<button class="btn ghost sm" data-delp="${p.id}">Delete</button>`:''}</div>`}
+function commit(ph){
+  const s=status();if(!s)return;const last=[...S.punches].reverse().find(p=>p.sid===sel);
+  if(last&&Date.now()-last.t<15000){toast('Already punched a moment ago.');return}
+  const type=s.open?'out':'in';
+  S.punches.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),sid:sel,t:Date.now(),type,ph});save();renderPunch();
+  toast(`${s.st.name} punched ${type} at ${fT(Date.now())}`);
+}
+function go(){
+  const v=$('#v');
+  if(stream&&v.videoWidth){commit(stamp(v,v.videoWidth,v.videoHeight,label()))}
+  else $('#f').click();
+}
+$('#f').addEventListener('change',e=>{
+  const file=e.target.files[0];e.target.value='';if(!file)return;
+  const img=new Image(),u=URL.createObjectURL(file);
+  img.onload=()=>{commit(stamp(img,img.width,img.height,label()));URL.revokeObjectURL(u)};
+  img.onerror=()=>toast('Couldn’t read that photo. Try again.');img.src=u;
+});
+
+/* ---- staff ---- */
+const rl={monthly:'Monthly salary (₹)',daily:'Daily wage (₹)',hourly:'Hourly rate (₹)'};
+function renderStaff(){
+  $('#slist').innerHTML=S.staff.length?S.staff.map(s=>`<div class="li"><div class="g"><b>${esc(s.name)}</b> <span class="mute">${esc(s.eid||'')}</span><div class="mute">${esc(s.role||'Staff')}: ${inr(s.rate)} ${s.type==='monthly'?'per month':s.type==='daily'?'per day':'per hour'}</div>${openId===s.id?detail(s):''}</div><div class="acts"><button class="btn ghost sm" data-dt="${s.id}">${openId===s.id?'Hide':'Details'}</button><button class="btn ghost sm" data-ed="${s.id}">Edit</button><button class="btn ghost sm" data-ot="${s.id}">${s.noOt?'No overtime':'Overtime on'}</button><button class="btn danger sm" data-rm="${s.id}">Remove</button></div></div>`).join(''):'<span class="mute">No staff added yet.</span>';
+  $('#s1').value=S.set.std;$('#s2').value=S.set.ot;$('#s3').value=S.set.days;$('#s4').value=S.set.start;$('#s5').value=S.set.pay;if(!editId){$('#ne').value=peekEid();if(!$('#nh').value)$('#nh').value=fI(Date.now())}
+}
+function addStaff(){
+  const n=$('#nn').value.trim(),r=+$('#na').value;
+  if(!n){toast('Enter a name.');return}if(!(r>0)){toast('Enter the pay amount.');return}
+  const x=extraFields();if(!x)return;
+  if(editId){Object.assign(S.staff.find(y=>y.id===editId),{name:n,role:$('#nr').value.trim(),type:$('#np').value,rate:r},x)}else S.staff.push(Object.assign({id:Date.now().toString(36),eid:nextEid(),name:n,role:$('#nr').value.trim(),type:$('#np').value,rate:r},x));save();
+  const was=editId;endEdit();renderStaff();toast(was?n+' updated':n+' added');
+}
+
+/* ---- staff details ---- */
+function fixEids(){
+  const okE=/^WPFD-DAH-(\d+)$/,hi=S.staff.reduce((m,s)=>{const x=okE.exec(s.eid||'');return x?Math.max(m,+x[1]):m},0);
+  S.seq=S.eidv===2?Math.max(S.seq||0,hi):hi;S.eidv=2;
+  S.staff.forEach(s=>{if(!okE.test(s.eid||''))s.eid=nextEid()});
+}
+function nextEid(){S.seq=(S.seq||0)+1;return'WPFD-DAH-'+String(S.seq).padStart(3,'0')}
+function peekEid(){return'WPFD-DAH-'+String((S.seq||0)+1).padStart(3,'0')}
+const XF=[['#nh','hired'],['#nd','dob'],['#nb','blood'],['#gt','gt'],['#gn','gn'],['#bh','bh'],['#bn','bn'],['#ba','ba'],['#bi','bi'],['#ac','ac'],['#ap','ap'],['#en','en'],['#ep','ep']];
+function fillExtra(s){$('#ne').value=s.eid||'';for(const[i,k]of XF)$(i).value=s[k]||''}
+function clearExtra(){for(const[i]of XF)$(i).value='';$('#nh').value=fI(Date.now());$('#ne').value=peekEid()}
+function extraFields(){
+  const v=i=>$(i).value.trim(),gt=v('#gt'),gn=v('#gn').toUpperCase().split(' ').join(''),ba=v('#ba').split(' ').join(''),ifsc=v('#bi').toUpperCase(),ep=v('#ep');
+  if(gn&&!gt){toast('Choose the government ID type.');return null}
+  if(gt==='Aadhaar'&&gn&&!/^\d{12}$/.test(gn)){toast('Aadhaar number must be 12 digits.');return null}
+  if(gt==='PAN'&&gn&&!/^[A-Z]{5}\d{4}[A-Z]$/.test(gn)){toast('PAN looks wrong. Example: ABCDE1234F');return null}
+  if(ba&&!/^\d{9,18}$/.test(ba)){toast('Account number should be 9 to 18 digits.');return null}
+  if(ifsc&&!/^[A-Z]{4}0[A-Z0-9]{6}$/.test(ifsc)){toast('IFSC code looks wrong. It has 11 characters.');return null}
+  if(ep&&ep.replace(/\D/g,'').length<10){toast('Enter a 10 digit phone number.');return null}
+  return{hired:v('#nh'),dob:v('#nd'),blood:v('#nb'),gt,gn,bh:v('#bh'),bn:v('#bn'),ba,bi:ifsc,ac:v('#ac'),ap:v('#ap'),en:v('#en'),ep}
+}
+function mask(v){v=String(v||'');return v.length>4?'•'.repeat(v.length-4)+v.slice(-4):v}
+function detail(s){
+  const r=(k,v)=>v?`<div><span class="mute">${k}:</span> ${esc(v)}</div>`:'';
+  const dt=t=>t?new Date(t+'T12:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'}):'';
+  return`<div class="dt">${r('Hired',dt(s.hired))}${r('Born',dt(s.dob))}${r('Blood group',s.blood)}${r(s.gt||'Govt ID',mask(s.gn))}${r('Bank',[s.bh,s.bn].filter(Boolean).join(', '))}${r('Account',mask(s.ba))}${r('IFSC',s.bi)}${r('Current address',s.ac)}${r('Permanent address',s.ap)}${r('Emergency contact',[s.en,s.ep].filter(Boolean).join(', '))}</div>`;
+}
+
+/* ---- edit staff ---- */
+function endEdit(){editId=null;['#nn','#nr','#na'].forEach(i=>$(i).value='');$('#np').value='monthly';$('#nal').textContent=rl.monthly;$('#fh').textContent='Add staff member';$('#fb').textContent='Add staff member';$('#fc').hidden=true;clearExtra()}
+function startEdit(id){const s=S.staff.find(x=>x.id===id);if(!s)return;editId=id;$('#nn').value=s.name;$('#nr').value=s.role||'';$('#np').value=s.type;$('#nal').textContent=rl[s.type];$('#na').value=s.rate;$('#fh').textContent='Edit '+s.name;$('#fb').textContent='Save changes';$('#fc').hidden=false;fillExtra(s);$('#fh').scrollIntoView({block:'start'});$('#nn').focus()}
+
+/* ---- owner lock ---- */
+async function hsh(p,salt){const d=salt+':'+p;try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(d));return[...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){let h=5381;for(const c of d)h=((h<<5)+h+c.charCodeAt(0))|0;return'x'+h}}
+function lockView(m){
+  mode=m;const set=m!=='enter';
+  for(const k of['punch','staff','rep'])$('#t-'+k).hidden=true;
+  const L=$('#t-lock');L.hidden=false;
+  L.innerHTML=`<h2>${m==='enter'?'Owner access':m==='change'?'Change PIN':'Set an owner PIN'}</h2><div class="card"><p class="mute">${m==='enter'?'Staff details and salaries are visible only after you enter the PIN.':'Choose a PIN of 4 to 8 digits. You’ll need it to see staff and salary details.'}</p><label for="p1">${set?'New PIN':'PIN'}</label><input id="p1" type="password" inputmode="numeric" autocomplete="off" maxlength="8">${set?'<label for="p2">Confirm PIN</label><input id="p2" type="password" inputmode="numeric" autocomplete="off" maxlength="8">':''}<div id="pe" style="color:var(--red);margin-top:8px;font-size:14px"></div><button class="btn" style="width:100%;margin-top:12px" data-a="${set?'setpin':'unlock'}">${set?'Save PIN':'Unlock'}</button>${m==='enter'?'<p class="mute" style="margin:14px 0 0">Forgot the PIN? Clearing this page’s site data in the browser settings resets it, but also erases all records. Keep a backup.</p>':''}</div>`;
+}
+async function setPin(){
+  const a=$('#p1').value,b=$('#p2').value;
+  if(!/^\d{4,8}$/.test(a)){$('#pe').textContent='Use 4 to 8 digits.';return}
+  if(a!==b){$('#pe').textContent='The two PINs don’t match.';return}
+  const salt=Math.random().toString(36).slice(2);S.pin={s:salt,h:await hsh(a,salt)};save();unlocked=true;toast('PIN saved');show(tab);
+}
+async function tryUnlock(){
+  if(Date.now()<until){$('#pe').textContent='Too many attempts. Wait '+Math.ceil((until-Date.now())/1000)+' seconds.';return}
+  if(S.pin&&await hsh($('#p1').value,S.pin.s)===S.pin.h){unlocked=true;fails=0;show(tab)}
+  else{fails++;if(fails>=5)until=Date.now()+30000*(fails-4);$('#pe').textContent='Wrong PIN.';$('#p1').value=''}
+}
+function lockNow(){unlocked=false;show('punch')}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.target.id==='p1'||e.target.id==='p2')){const b=$('#t-lock [data-a]');if(b)b.click()}});
+
+/* ---- backup ---- */
+async function bkCopy(){
+  const t=JSON.stringify({v:1,staff:S.staff,punches:S.punches.map(p=>({id:p.id,sid:p.sid,t:p.t,type:p.type})),set:S.set,adj:S.adj,adv:S.adv,seq:S.seq,eidv:S.eidv});
+  $('#bk').value=t;try{await navigator.clipboard.writeText(t);toast('Backup copied')}catch(e){$('#bk').select();toast('Select and copy the backup text.')}
+}
+function bkRestore(){
+  const b=$('[data-a="bkrest"]');
+  if(!b.dataset.arm){b.dataset.arm=1;b.textContent='Tap again to replace all data';setTimeout(()=>{if(b.isConnected){delete b.dataset.arm;b.textContent='Restore from text'}},4000);return}
+  try{const o=JSON.parse($('#bk').value);if(!Array.isArray(o.staff)||!Array.isArray(o.punches))throw 0;S.staff=o.staff;S.eidv=o.eidv;S.seq=o.seq||0;fixEids();S.punches=o.punches;S.set=Object.assign(S.set,o.set||{});S.adj=o.adj||{};S.adv=Array.isArray(o.adv)?o.adv:[];sel=null;save();renderStaff();toast('Backup restored')}
+  catch(e){toast('That text isn’t a valid backup.')}
+  delete b.dataset.arm;b.textContent='Restore from text';
+}
+
+/* ---- salary period and advances ---- */
+function period(m){const[y,mo]=m.split('-').map(Number),d=S.set.start||1;return{a:new Date(y,mo-1,d).getTime(),b:new Date(y,mo,d).getTime()}}
+function payDate(m){const e=new Date(period(m).b-1);return new Date(e.getFullYear(),e.getMonth()+1,S.set.pay||10)}
+function advOf(sid,m){const P=period(m);return S.adv.filter(x=>x.sid===sid&&x.t>=P.a&&x.t<P.b).reduce((a,x)=>a+x.amt,0)}
+function defMonth(){const n=new Date(),c=[ym(new Date(n.getFullYear(),n.getMonth()-1,1)),ym(n)];return c.find(m=>payDate(m).getTime()+864e5>Date.now())||c[1]}
+function advCard(m){
+  if(!S.staff.length)return'';
+  const P=period(m),list=S.adv.filter(x=>x.t>=P.a&&x.t<P.b).sort((a,b)=>b.t-a.t);
+  const d=Date.now()>=P.a&&Date.now()<P.b?new Date():new Date(P.a),iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  return`<div class="card"><h3 style="margin-top:0">Advances</h3>
+  <label for="ad-s">Staff member</label><select id="ad-s">${S.staff.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('')}</select>
+  <div class="row"><div><label for="ad-a">Amount (₹)</label><input id="ad-a" type="number" inputmode="decimal" min="1"></div><div><label for="ad-d">Date</label><input id="ad-d" type="date" value="${iso}"></div></div>
+  <label for="ad-n">Note (optional)</label><input id="ad-n" autocomplete="off">
+  <button class="btn" style="width:100%;margin-top:12px" data-a="addadv">Add advance</button>
+  <div style="margin-top:12px">${list.length?list.map(x=>`<div class="li"><div class="g"><b>${esc((S.staff.find(s=>s.id===x.sid)||{name:'Removed'}).name)}</b><div class="mute">${fD(x.t)}${x.n?': '+esc(x.n):''}</div></div><b>${inr(x.amt)}</b><button class="btn ghost sm" data-deladv="${x.id}">Delete</button></div>`).join(''):'<span class="mute">No advances in this period.</span>'}</div></div>`;
+}
+function addAdv(){
+  const a=+$('#ad-a').value,dv=$('#ad-d').value;
+  if(!(a>0)){toast('Enter the advance amount.');return}
+  if(!dv){toast('Choose the date.');return}
+  const[y,mo,d]=dv.split('-').map(Number),t=new Date(y,mo-1,d,12).getTime(),P=period($('#mo').value);
+  S.adv.push({id:Date.now().toString(36)+Math.random().toString(36).slice(2,5),sid:$('#ad-s').value,t,amt:a,n:$('#ad-n').value.trim()});save();renderRep();
+  toast(t>=P.a&&t<P.b?'Advance added':'Saved, but that date is outside the period shown.');
+}
+function delAdv(id){S.adv=S.adv.filter(x=>x.id!==id);save();renderRep()}
+
+/* ---- CSV export ---- */
+const NL=String.fromCharCode(10),pad2=n=>String(n).padStart(2,'0');
+const fI=t=>{const d=new Date(t);return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate())};
+const fH=t=>{const d=new Date(t);return pad2(d.getHours())+':'+pad2(d.getMinutes())};
+const nmOf=id=>(S.staff.find(s=>s.id===id)||{name:'Removed'}).name;
+const cq=v=>{v=v==null?'':v;if(typeof v==='string'&&v&&'=+-@'.includes(v[0]))v="'"+v;v=String(v);return v.includes(',')||v.includes('"')||v.includes(NL)?'"'+v.split('"').join('""')+'"':v};
+const toCsv=rows=>String.fromCharCode(65279)+rows.map(r=>r.map(cq).join(',')).join(NL);
+async function dl(name,rows){
+  const P=window.Capacitor&&Capacitor.Plugins,data=toCsv(rows);
+  try{
+    if(P&&P.Filesystem&&P.Share){
+      const w=await P.Filesystem.writeFile({path:name,data,directory:'CACHE',encoding:'utf8'});
+      await P.Share.share({title:name,files:[w.uri],dialogTitle:'Save or send the CSV'});
+    }else{
+      const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'text/csv'}));a.download=name;document.body.appendChild(a);a.click();a.remove();
+    }
+    toast('CSV ready');
+  }catch(e){if(!/cancel/i.test(String(e&&e.message||e)))toast('Couldn’t save the file.')}
+}
+function dayCsv(iso){
+  if(!iso){toast('Choose a date.');return}
+  const[y,mo,d]=iso.split('-').map(Number),a=new Date(y,mo-1,d).getTime(),b=new Date(y,mo-1,d+1).getTime();
+  const rows=[['Employee ID','Staff','Role','Date','In','Out','Hours','Status']];
+  for(const s of S.staff){
+    const q=sessions(s.id),L=q.out.filter(x=>x.a>=a&&x.a<b).map(x=>[fH(x.a),fH(x.b),((x.b-x.a)/36e5).toFixed(2)]);
+    if(q.open&&q.open.t>=a&&q.open.t<b)L.push([fH(q.open.t),'Still in','']);
+    if(L.length)L.forEach(l=>rows.push([s.eid,s.name,s.role||'',iso,...l,'Present']));else rows.push([s.eid,s.name,s.role||'',iso,'','','0','Absent']);
+  }
+  dl('attendance-'+iso+'.csv',rows);
+}
+function salCsv(){
+  const m=$('#mo').value,P=period(m),pd=payDate(m);
+  const rows=[['Employee ID','Staff','Role','Pay type','Rate','Period','Pay day','Days','Hours','Overtime hours','Pay for time worked','Overtime pay','Advances','Other deduction','Net pay']];
+  for(const s of S.staff){const c=calc(s,m);rows.push([s.eid,s.name,s.role||'',s.type,s.rate,fI(P.a)+' to '+fI(P.b-1),fI(pd.getTime()),c.full,c.hrs.toFixed(2),c.otH.toFixed(2),Math.round(c.base),Math.round(c.otPay),Math.round(c.adv),Math.round(c.other),Math.round(c.net)])}
+  dl('salary-'+m+'.csv',rows);
+}
+function logCsv(){
+  const m=$('#mo').value,P=period(m),rows=[['Staff','Date','Time','Type']];
+  S.punches.filter(p=>p.t>=P.a&&p.t<P.b).forEach(p=>rows.push([nmOf(p.sid),fI(p.t),fH(p.t),p.type==='in'?'In':'Out']));
+  dl('punches-'+m+'.csv',rows);
+}
+function advCsv(){
+  const m=$('#mo').value,P=period(m),rows=[['Staff','Date','Amount','Note']];
+  S.adv.filter(x=>x.t>=P.a&&x.t<P.b).sort((a,b)=>a.t-b.t).forEach(x=>rows.push([nmOf(x.sid),fI(x.t),x.amt,x.n||'']));
+  dl('advances-'+m+'.csv',rows);
+}
+function exportCard(){
+  return`<h3>Download CSV</h3><div class="card"><label for="xd" style="margin-top:0">Attendance for a day</label><div class="row"><input id="xd" type="date" value="${fI(Date.now())}"><button class="btn ghost" data-a="x-day">Day CSV</button></div><p class="mute">The buttons below use the salary period shown above.</p><div class="row"><button class="btn ghost sm" data-a="x-sal">Salary CSV</button><button class="btn ghost sm" data-a="x-log">Punch log CSV</button></div><button class="btn ghost sm" style="margin-top:10px" data-a="x-adv">Advances CSV</button></div>`;
+}
+
+/* ---- report ---- */
+function renderRep(){
+  const m=$('#mo').value;if(!m)return;const P=period(m),pd=payDate(m);let tot=0,html=`<div class="card"><b>${fD(P.a)} to ${fD(P.b-1)}</b><div class="mute">Pay day: ${pd.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}${Date.now()<P.b?'. This period is still running.':''}</div></div>`+advCard(m),txt=`Woking Panda Frying Dragon, Dahisar Kandarpada\nSalary ${m}\n`;
+  if(!S.staff.length){$('#rep').innerHTML='<div class="card mute">Add staff first, then punch in and out to see salaries here.</div>';return}
+  for(const s of S.staff){
+    const c=calc(s,m);tot+=c.net;txt+=`${s.name}: ${c.full} days, ${c.hrs.toFixed(1)} h, advances ${inr(c.adv)}, net ${inr(c.net)}\n`;
+    html+=`<div class="card"><b style="font-size:18px">${esc(s.name)}</b> <span class="mute">${esc(s.role||'')}</span>
+    <div class="stat"><div><b>${c.full}</b><span class="mute">days</span></div><div><b>${c.hrs.toFixed(1)}</b><span class="mute">hours</span></div><div><b>${c.otH.toFixed(1)}</b><span class="mute">overtime h</span></div></div>
+    <div class="li"><div class="g">Pay for time worked</div><div>${inr(c.base)}</div></div>
+    <div class="li"><div class="g">Overtime</div><div>${inr(c.otPay)}</div></div>
+    <div class="li"><div class="g">Advances taken</div><div>−${inr(c.adv)}</div></div>
+    <div class="li"><div class="g"><label style="margin:0" for="d${s.id}">Other deduction (₹)</label></div><div style="width:110px"><input id="d${s.id}" type="number" inputmode="decimal" min="0" value="${c.other||''}" data-adj="${m}|${s.id}"></div></div>
+    <div class="net"><span>Net pay</span><b>${inr(c.net)}</b></div>${c.net<0?'<div class="mute">Advances are more than this period’s pay. Carry the balance to the next period.</div>':''}</div>`;
+  }
+  html+=`<div class="card tot"><div class="mute">Total payroll for ${m}</div><b style="font:700 30px 'Bricolage Grotesque',sans-serif">${inr(tot)}</b><div style="margin-top:12px"><button class="btn ghost sm" style="color:#fff;border-color:#9fc4bf" data-a="copy">Copy summary</button></div></div>`;
+  const lg=S.punches.filter(p=>p.t>=P.a&&p.t<P.b).reverse();
+  html+=exportCard()+`<h3>Punch log</h3><div class="card">${lg.length?lg.map(p=>row(p,true)).join(''):'<span class="mute">No punches this month.</span>'}</div>`;
+  $('#rep').innerHTML=html;renderRep.txt=txt+'Total: '+inr(tot);
+}
+async function copy(){
+  const t=renderRep.txt||'';
+  try{await navigator.clipboard.writeText(t);toast('Summary copied')}
+  catch(e){try{const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();toast('Summary copied')}catch(x){toast('Couldn’t copy on this device.')}}
+}
+
+/* ---- wiring ---- */
+function show(t){
+  tab=t;if(t==='punch')unlocked=false;const gate=t!=='punch'&&!unlocked;$('#t-lock').hidden=!gate;for(const k of['punch','staff','rep'])$('#t-'+k).hidden=gate||k!==t;if(gate){openId=null;$('#slist').innerHTML='';$('#rep').innerHTML='';lockView(S.pin?'enter':'set')}
+  document.querySelectorAll('nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  if(t==='punch'){renderPunch();startCam()}else stopCam();
+  if(!gate){if(t==='staff')renderStaff();if(t==='rep')renderRep()}window.scrollTo(0,0);
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;const d=b.dataset;
+  if(d.tab)show(d.tab);
+  else if(d.sel){sel=d.sel;renderPunch()}
+  else if(b.id==='go')go();
+  else if(b.id==='retry')startCam();else if(b.id==='nat'){if(sel)$('#f').click();else toast('Pick your name first.')}
+  else if(d.a==='add')addStaff();else if(d.a==='cancel')endEdit();else if(d.ed)startEdit(d.ed);else if(d.dt){openId=openId===d.dt?null:d.dt;renderStaff()}else if(d.a==='sameadr')$('#ap').value=$('#ac').value;else if(d.a==='x-day')dayCsv($('#xd').value);else if(d.a==='x-sal')salCsv();else if(d.a==='x-log')logCsv();else if(d.a==='x-adv')advCsv();else if(d.a==='addadv')addAdv();else if(d.deladv)delAdv(d.deladv);else if(d.a==='lock')lockNow();else if(d.a==='chpin')lockView('change');else if(d.a==='bkcopy')bkCopy();else if(d.a==='bkrest')bkRestore();else if(d.a==='unlock')tryUnlock();else if(d.a==='setpin')setPin();
+  else if(d.a==='copy')copy();
+  else if(d.ot){const s=S.staff.find(x=>x.id===d.ot);s.noOt=!s.noOt;save();renderStaff()}
+  else if(d.rm){
+    if(b.dataset.arm){if(editId===d.rm)endEdit();S.staff=S.staff.filter(x=>x.id!==d.rm);S.punches=S.punches.filter(p=>p.sid!==d.rm);S.adv=S.adv.filter(x=>x.sid!==d.rm);if(sel===d.rm)sel=null;save();renderStaff()}
+    else{b.dataset.arm=1;b.textContent='Tap again to remove';setTimeout(()=>{if(b.isConnected){delete b.dataset.arm;b.textContent='Remove'}},3000)}
+  }
+  else if(d.delp){S.punches=S.punches.filter(p=>p.id!==d.delp);save();renderRep()}
+});
+document.addEventListener('change',e=>{
+  const i=e.target;
+  if(i.dataset.s){const v=+i.value;if(v>0){S.set[i.dataset.s]=v;save()}}
+  else if(i.dataset.adj){S.adj[i.dataset.adj]=+i.value||0;save();renderRep()}
+  else if(i.id==='mo')renderRep();
+  else if(i.id==='np')$('#nal').textContent=rl[i.value];
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){stopCam();unlocked=false}else if(tab==='punch')startCam();else show(tab)});
+function tick(){const n=new Date();$('#clk').textContent=n.toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',second:'2-digit'});$('#dt').textContent=n.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}
+$('#mo').value=defMonth();tick();setInterval(tick,1000);show('punch');
+if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
